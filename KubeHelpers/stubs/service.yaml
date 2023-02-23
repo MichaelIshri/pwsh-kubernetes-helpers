@@ -1,0 +1,13 @@
+apiVersion: 1
+kind: Service
+metadata:
+  name: {{ name }}
+spec:
+  selector:
+    app: webapp
+  ports:
+    - name: http
+      port: 80
+      nodePort: 30080
+  # Options: ClusterIP, NodePort, Loadbalancer
+  type: NodePort
